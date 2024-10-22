@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: local_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: local_db
+      MYSQL_USER: local_user
+      MYSQL_PASSWORD: local_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql  # 데이터 영속화를 위한 볼륨 설정
